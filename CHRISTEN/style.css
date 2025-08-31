@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(ellipse At bottom, #201910 0%,#090805 100%);
+    background-attachment: fixed; 
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;    
+    transition: padding 0.6s, background 0.5s ease;                      
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at bottom, #201910 0%, #090805 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li {
+    list-style: none;
+}
+header ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    transition: 0.6s;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+}
+header.sticky ul li a {
+    color: white;
+    font-size: 25px;
+}
+header.sticky .logo {
+    font-size: 30px;
+}
+header.sticky ul li a:hover {
+    color: lightgray;
+    transform: scale(1);
+}
+header.sticky::before {
+    opacity: 1;
+}
+
+header.sticky {
+    padding: 5px 50px;
+}
+
+header .logo {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    transition: 0.6s;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+header ul li a:hover {
+    color: lightgrey;
+
+}
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.text-container, .image-container {
+    flex: 1;
+}
+main {
+    margin-top: 150px;
+    padding: 20px;
+    text-align: center;
+}
+.coin {
+    transition: background-color 0.4s ease, transform 0.4s ease, filter 0.4s ease; 
+    filter: drop-shadow(0 0 0 transparent); 
+}
+.coin:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 1.5rem rgb(63, 58, 42));
+}
+
+.slogan {
+    font-size: 3em;
+    margin: 20px 0;
+
+}
+.typewrite {
+    position: relative;
+}
+.typewrite::after {
+    content: '';
+    width: 1px;
+    border-right: 5px solid white;
+    height: 100%;
+    margin-left: 0.5rem;
+    animation: blink 1s infinite;
+    
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+
+/* Services */
+.services {
+    padding: 10px;
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+}
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-cards {
+    margin: 10px;
+    width: 300px;
+    height: 400px;
+    transition: background-color 0.5s;
+    padding: 30px;
+
+}
+.service-cards img {
+    width: 60px;
+    height: auto;
+}
+.service-cards p {
+    padding: 30px;
+    font-size: 20px;
+    color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.service-cards:hover {
+    background-color: #1f1a14;
+}
+@media (max-width: 768px) {
+
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container, .text-container {
+        width: 100%; 
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-cards {
+        width: 100%; 
+        max-width: 400px; 
+        
+    }
+    .desktop-image {
+        display: none; /* Desktop-Bild ausblenden */
+    }
+    .mobile-image {
+        display: block; /* Mobile-Bild anzeigen */
+        width: 100%; /* Volle Breite für kleinere Bildschirme */
+        height: auto;
+    }
+    
+}
+.get-started img {
+    height: 1000px;
+    width: auto;
+}
+.get-started {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.desktop-image {
+    display: block;
+}
+.mobile-image {
+    display: none;
+}
+
+.social-media {
+    margin: 40px 0;
+}
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #e0e0e0;
+}
+.social-media img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
